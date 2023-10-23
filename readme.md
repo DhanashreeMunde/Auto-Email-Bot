@@ -14,6 +14,7 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 ### Running the application
+This application will be run using the wsgi development server. If you want to productionise the application, please use a server like gunicorn
 ```
 python start.py
 ```
