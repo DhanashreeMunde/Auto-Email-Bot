@@ -37,6 +37,8 @@ def get_data_from_tables(table_name):
         elif table_name == "logs":
             results = Logs.query.all()
             results = [[log.created_at, log.log_type, log.log_text] for log in results]
+        else:
+            results = None
     except Exception as e:
         logging.error("Error retreiving information from table {} - ".format(table_name) + str(e))
     # for row in results:
