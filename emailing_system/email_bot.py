@@ -31,8 +31,8 @@ def send_event_emails_2_employees(max_retries = 3):
     logging.info('Initiating email bot')
     if(max_retries == 0):
         return True
-    # current_date = datetime.now().date()
-    current_date = datetime(2023, 10, 1).date() #+ timedelta(days=random.randint(1,30))
+    current_date = datetime.now().date()
+    # current_date = datetime(2023, 10, 1).date() #+ timedelta(days=random.randint(1,30))
     with scheduler.app.app_context():
         try:
             events_pending_2day = Events.query.filter(Events.date >= current_date, Events.date < current_date + timedelta(days=1)).all()
