@@ -24,8 +24,8 @@ def send_mail(recipient_email, sender_mail, subject, body):
 @scheduler.task(
     "cron",
     id="email_service",
-    hour=3,
-    minute=38
+    hour=10,
+    minute=00
 )
 def send_event_emails_2_employees(max_retries = 3):
     logging.info('Initiating email bot')
